@@ -1,0 +1,75 @@
+<h1>Formulário reativo</h1>
+
+
+<div class='container'>
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>
+                Faça seu cadastro !!!!
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <form action="#" id='main-form' [formGroup]="Dados">
+                <div class='form-row'>
+                    <mat-form-field>
+                        <mat-label>Nome:</mat-label>
+                        <input type='text' matInput placeholder='' required minlength="3" formControlName="nome">
+
+
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Sobrenome:</mat-label>
+                        <input type='text' matInput placeholder='' required minlength="" formControlName="sobrenome">
+
+                    </mat-form-field>
+                </div>
+                <div class='form-row'>
+                    <mat-form-field>
+                        <mat-label>Username:</mat-label>
+                        <input type='text' matInput placeholder='' class='grow' required minlength="3" formControlName="username">
+
+                    </mat-form-field>
+
+                </div>
+                <div class='form-row'>
+                    <mat-form-field>
+                        <mat-label>CPF:</mat-label>
+                        <input type='text' matInput placeholder='' required minlength="3" formControlName="cpf">
+
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Telefone:</mat-label>
+                        <input type='text' matInput placeholder='' name='telefone' required minlength="3" formControlName="telefone">
+
+                    </mat-form-field>
+                </div>
+
+
+                <div class='form-row'>
+                    <mat-form-field>
+                        <mat-label>Endereço:</mat-label>
+                        <input type='text' matInput placeholder='' required minlength="3" formControlName="endereco">
+
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Complemento:</mat-label>
+                        <input type='text' matInput placeholder='' minlength="3" formControlName="complemento">
+
+                    </mat-form-field>
+                </div>
+                <div class='form-row'>
+                    <mat-form-field>
+                        <mat-label>Digite sua senha:</mat-label>
+                        <input type='text' matInput placeholder='' required minlength="3" formControlName="senha0">
+
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Comfirme sua senha:</mat-label>
+                        <input type='text ' matInput placeholder=' ' required minlength="3" formControlName="senha1">
+
+                    </mat-form-field>
+                </div>
+                <div class='form-row'>
+                    <button mat-button color="accent" type="submit" class="grow"> Cadastrar</button>
+                </div>
+                <mat-card-content>
