@@ -1,5 +1,12 @@
-import { Component } from '@angular/core';
+import { Component , Input } from '@angular/core';
 import { FormArray, FormControl, FormGroup} from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import {FormularioComponent} from './formulario/formulario.component';
+
+
+
+
+
 
 @Component({
   selector: 'app-root',
@@ -25,8 +32,21 @@ export class AppComponent {
     new FormControl(''),
     new FormControl('')
   ])
+ constructor( public dialog:  MatDialog ){
 
- constructor(){}
 }
 
 
+ openDialog(): void {
+  const dialogRef = this.dialog.open( FormularioComponent, {
+    width: '250px',
+   
+  
+});
+
+  dialogRef.afterClosed().subscribe(result => {
+    console.log('The dialog was closed');
+  
+  });
+}
+}
