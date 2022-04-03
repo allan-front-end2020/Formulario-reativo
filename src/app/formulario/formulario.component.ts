@@ -8,8 +8,15 @@ import { MatDialogRef} from '@angular/material/dialog'
 })
 export class FormularioComponent implements OnInit {
 
+  
+    nome:string=''
+    sobrenome:string=''
+    username:string=''
+    cpf:string=''
+    telefone:string=''
+    endereco:string=''
 
-
+  
   constructor( 
     private dialogRef: MatDialogRef<FormularioComponent>,
   
@@ -18,8 +25,6 @@ export class FormularioComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  x(): void {
-    this.dialogRef.close();
-  }
+ 
 
 }

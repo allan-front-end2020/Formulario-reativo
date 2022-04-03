@@ -13,20 +13,18 @@
                 <div class='form-row'>
                     <mat-form-field>
                         <mat-label>Nome:</mat-label>
-                        <input type='text' matInput placeholder='' required minlength="3" formControlName="nome">
-
-
+                        <input type='text' matInput placeholder='' formControlName="nome">
                     </mat-form-field>
                     <mat-form-field>
                         <mat-label>Sobrenome:</mat-label>
-                        <input type='text' matInput placeholder='' required minlength="" formControlName="sobrenome">
+                        <input type='text' matInput placeholder='' formControlName="sobrenome">
 
                     </mat-form-field>
                 </div>
                 <div class='form-row'>
                     <mat-form-field>
                         <mat-label>Username:</mat-label>
-                        <input type='text' matInput placeholder='' class='grow' required minlength="3" formControlName="username">
+                        <input type='text' matInput placeholder='' class='grow' formControlName="username">
 
                     </mat-form-field>
 
@@ -34,12 +32,11 @@
                 <div class='form-row'>
                     <mat-form-field>
                         <mat-label>CPF:</mat-label>
-                        <input type='text' matInput placeholder='' required minlength="3" formControlName="cpf">
-
+                        <input type='text' matInput placeholder='' required minlength="3">
                     </mat-form-field>
                     <mat-form-field>
                         <mat-label>Telefone:</mat-label>
-                        <input type='text' matInput placeholder='' name='telefone' required minlength="3" formControlName="telefone">
+                        <input type='text' matInput placeholder='' name='telefone' formControlName="telefone">
 
                     </mat-form-field>
                 </div>
@@ -48,29 +45,41 @@
                 <div class='form-row'>
                     <mat-form-field>
                         <mat-label>Endereço:</mat-label>
-                        <input type='text' matInput placeholder='' required minlength="3" formControlName="endereco">
+                        <input type='text' matInput placeholder='' formControlName="endereco">
 
                     </mat-form-field>
                     <mat-form-field>
                         <mat-label>Complemento:</mat-label>
-                        <input type='text' matInput placeholder='' minlength="3" formControlName="complemento">
+                        <input type='text' matInput placeholder='' formControlName="complemento">
 
                     </mat-form-field>
                 </div>
                 <div class='form-row'>
                     <mat-form-field>
                         <mat-label>Digite sua senha:</mat-label>
-                        <input type='text' matInput placeholder='' required minlength="3" formControlName="senha0">
-
+                        <input type='password' matInput placeholder='' formControlName="senha0">
+                        <mat-error>
+                            <span *ngIf="Dados.controls['senha0'].getError('minlength')" id="senha0">
+                               Minimo 8 caracteres
+                              </span>
+                        </mat-error>
                     </mat-form-field>
                     <mat-form-field>
                         <mat-label>Comfirme sua senha:</mat-label>
-                        <input type='text ' matInput placeholder=' ' required minlength="3" formControlName="senha1">
+                        <input type='password' matInput placeholder=' ' formControlName="senha1">
+                        <mat-error>
+                            <span *ngIf="Dados.controls['senha1'].getError('minlength')" id="senha0">
+                              minimo 8 caractres
+                            </span>
+                            <span *ngIf="Dados.controls['senha1'].getError('minlength')" id="senha0">
+                                A senhas Nao são a mesmas
+                             </span>
+                        </mat-error>
 
                     </mat-form-field>
                 </div>
                 <div class='form-row'>
-                    <button mat-button (click)="openDialog()">Cadastrar</button>
+                    <button mat-button (click)="openDialog()" [disabled]="">Cadastrar</button>
                 </div>
                 <mat-card-content>
                     <form>
